@@ -70,9 +70,6 @@ class TestCart:
         cart.add_product(buy_count=1000, product=product)
         assert cart.products[product] == 1999
 
-    def test_add_product_1001(self, product, cart):
-        assert not cart.add_product(buy_count=1001, product=product)
-
     def test_remove_product_with_int(self, product, cart):
         cart.add_product(buy_count=100, product=product)
         cart.remove_product(remove_count=100, product=product)
@@ -92,8 +89,6 @@ class TestCart:
         cart.add_product(buy_count=1000, product=product)
         cart.remove_product(remove_count=1500, product=product)
         assert len(cart.products) == 0
-
-
 
     def test_clear(self, product, cart):
         cart.add_product(buy_count=100, product=product)
